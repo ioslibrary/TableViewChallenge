@@ -10,7 +10,7 @@ class ProductViewModel {
 
     init() {
         // initialise the webservice instance
-        self.productWebService = WebService(urlString: ProductConstant.productURLString)
+        self.productWebService = WebService(urlString: Constant.productURLString)
     }
 
     // Get Product for given index

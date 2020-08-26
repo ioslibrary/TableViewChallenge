@@ -12,7 +12,7 @@ class ProductWebServiceTest: XCTestCase {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession(configuration: config)
-        sut = WebService(urlString: ProductConstant.productURLString, urlSession: urlSession)
+        sut = WebService(urlString: Constant.productURLString, urlSession: urlSession)
         
     }
     // Release all the properties that you created
@@ -78,8 +78,59 @@ class ProductWebServiceTest: XCTestCase {
         self.wait(for: [expectation], timeout: 20)
     }
     
+    // when API gives successful response with product list
+    func testProductWebService_WhenGivenSuccessfullResponseWithProductList_ReturnsSuccess() {
+        
+        // Arrange
+        var data: Data?
+        
+        if let path = Bundle.main.path(forResource: "ResponseWithProductList", ofType: "json") {
+            do {
+                data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+              } catch {
+                   // handle error
+              }
+        }
+        
+        MockURLProtocol.stubResponseData =  data
+        let expectation = self.expectation(description: "Product Web Service Response Expectation")
+        
+        // Act
+        sut.getProducts() { (productResponseModel, error) in
+            XCTAssertEqual(productResponseModel?.products?.count, 2)
+            expectation.fulfill()
+        }
+        self.wait(for: [expectation], timeout: 20)
+    }
+    
+    // when API gives successful response with empty product list
+    func testProductWebService_WhenGivenSuccessfullResponseWithEmptyProductList_ReturnsSuccess() {
+        
+        // Arrange
+        var data: Data?
+        
+        if let path = Bundle.main.path(forResource: "ResponseWithProductListEmpty", ofType: "json") {
+            do {
+                data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+              } catch {
+                   // handle error
+              }
+        }
+        
+        MockURLProtocol.stubResponseData =  data
+        let expectation = self.expectation(description: "Product Web Service Response Expectation")
+        
+        // Act
+        sut.getProducts() { (productResponseModel, error) in
+            XCTAssertEqual(productResponseModel?.products?.count, 0)
+            expectation.fulfill()
+        }
+        self.wait(for: [expectation], timeout: 20)
+        
+    }
+    
     func testProductWebservice_WithWaitForExpectations_ReturnsSuccessFailure() {
-        sut = WebService(urlString: ProductConstant.productURLString)
+        sut = WebService(urlString: Constant.productURLString)
         let expectations = expectation(description: "WebService Response")
         // Act
 

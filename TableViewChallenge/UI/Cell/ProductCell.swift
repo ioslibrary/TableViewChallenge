@@ -3,6 +3,12 @@
 import UIKit
 import SDWebImage
 
+enum ProductCellConstant: CGFloat  {
+    case iPadMinCellHeight = 108
+    case iPhoneMinCellHeight = 72
+    case cornerRadius = 5
+    case trailingSpace = 10
+}
 
 class ProductCell : UITableViewCell {
     
@@ -40,7 +46,7 @@ class ProductCell : UITableViewCell {
         let imgView = UIImageView(image: UIImage(named: "applelogo"))
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
-        imgView.layer.cornerRadius = 5
+        imgView.layer.cornerRadius = ProductCellConstant.cornerRadius.rawValue
         return imgView
     }()
     
@@ -53,7 +59,7 @@ class ProductCell : UITableViewCell {
         contentView.addSubview(productImage)
         
         // To set cell minimum height. It will be used when either title or description or both are null
-        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 108 : 72).isActive = true
+        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: UIDevice.current.userInterfaceIdiom == .pad ? ProductCellConstant.iPadMinCellHeight.rawValue : ProductCellConstant.iPhoneMinCellHeight.rawValue).isActive = true
         
         let marginGuide = contentView.layoutMarginsGuide
         
@@ -63,21 +69,21 @@ class ProductCell : UITableViewCell {
         NSLayoutConstraint.activate([
             productImage.widthAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? FontSize.iPadImageWidthHeight.rawValue : FontSize.iPhoneImageWidthHeight.rawValue),
             productImage.heightAnchor.constraint(equalToConstant:  UIDevice.current.userInterfaceIdiom == .pad ? FontSize.iPadImageWidthHeight.rawValue : FontSize.iPhoneImageWidthHeight.rawValue),
-            productImage.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: -5),
+            productImage.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: -ProductCellConstant.cornerRadius.rawValue),
             productImage.leftAnchor.constraint(equalTo: marginGuide.leftAnchor),
         ])
 
         // Product Name label Constraint
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
         productNameLabel.numberOfLines = 0
-        productNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 10).isActive = true
+        productNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: ProductCellConstant.trailingSpace.rawValue).isActive = true
         productNameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         productNameLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         
         // Product Description label Constraint
         productDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         productDescriptionLabel.numberOfLines = 0
-        productDescriptionLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 10).isActive = true
+        productDescriptionLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: ProductCellConstant.trailingSpace.rawValue).isActive = true
         productDescriptionLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         productDescriptionLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         productDescriptionLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor).isActive = true

@@ -24,11 +24,13 @@
 		7D85034524F3D3CB0021BBEB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85033424F3D3CB0021BBEB /* Extensions.swift */; };
 		7D85034624F3D3CB0021BBEB /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85033624F3D3CB0021BBEB /* FontSize.swift */; };
 		7D85034724F3D3CB0021BBEB /* ProductAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85033824F3D3CB0021BBEB /* ProductAPIError.swift */; };
-		7D85034824F3D3CB0021BBEB /* ProductConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85033924F3D3CB0021BBEB /* ProductConstant.swift */; };
 		7D85034924F3D3CB0021BBEB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85033A24F3D3CB0021BBEB /* Product.swift */; };
 		7D85034F24F3D4B70021BBEB /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85034B24F3D4B70021BBEB /* MockURLProtocol.swift */; };
 		7D85035024F3D4B70021BBEB /* MockProductWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85034C24F3D4B70021BBEB /* MockProductWebService.swift */; };
 		7D85035124F3D4B70021BBEB /* ProductWebServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85034E24F3D4B70021BBEB /* ProductWebServiceTest.swift */; };
+		7DEB559924F67BE0003E85AC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB559824F67BE0003E85AC /* Constant.swift */; };
+		7DEB559B24F69129003E85AC /* ResponseWithProductList.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB559A24F69129003E85AC /* ResponseWithProductList.json */; };
+		7DEB559F24F69589003E85AC /* ResponseWithProductListEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB559E24F69588003E85AC /* ResponseWithProductListEmpty.json */; };
 		DEC8EF1D839EB891FEB7BD6D /* Pods_TableViewChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9768038838703CD0903414 /* Pods_TableViewChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,11 +70,13 @@
 		7D85033424F3D3CB0021BBEB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7D85033624F3D3CB0021BBEB /* FontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		7D85033824F3D3CB0021BBEB /* ProductAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAPIError.swift; sourceTree = "<group>"; };
-		7D85033924F3D3CB0021BBEB /* ProductConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductConstant.swift; sourceTree = "<group>"; };
 		7D85033A24F3D3CB0021BBEB /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7D85034B24F3D4B70021BBEB /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		7D85034C24F3D4B70021BBEB /* MockProductWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockProductWebService.swift; sourceTree = "<group>"; };
 		7D85034E24F3D4B70021BBEB /* ProductWebServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductWebServiceTest.swift; sourceTree = "<group>"; };
+		7DEB559824F67BE0003E85AC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		7DEB559A24F69129003E85AC /* ResponseWithProductList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResponseWithProductList.json; sourceTree = "<group>"; };
+		7DEB559E24F69588003E85AC /* ResponseWithProductListEmpty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResponseWithProductListEmpty.json; sourceTree = "<group>"; };
 		DB8547E6BB110CFB6CE0BF3C /* Pods-TableViewChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-TableViewChallengeTests/Pods-TableViewChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				7D85032024F3D3B20021BBEB /* AppDelegate.swift */,
+				7DEB559824F67BE0003E85AC /* Constant.swift */,
 				7D85033524F3D3CB0021BBEB /* Enum */,
 				7D85033324F3D3CB0021BBEB /* Extensions */,
 				7D85033724F3D3CB0021BBEB /* Model */,
@@ -147,6 +152,7 @@
 		7D85032224F3D3CA0021BBEB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DEB55A024F69616003E85AC /* json file */,
 				7D85032324F3D3CA0021BBEB /* Fonts */,
 			);
 			path = Resources;
@@ -226,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				7D85033824F3D3CB0021BBEB /* ProductAPIError.swift */,
-				7D85033924F3D3CB0021BBEB /* ProductConstant.swift */,
 				7D85033A24F3D3CB0021BBEB /* Product.swift */,
 			);
 			path = Model;
@@ -247,6 +252,15 @@
 				7D85034E24F3D4B70021BBEB /* ProductWebServiceTest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		7DEB55A024F69616003E85AC /* json file */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB559E24F69588003E85AC /* ResponseWithProductListEmpty.json */,
+				7DEB559A24F69129003E85AC /* ResponseWithProductList.json */,
+			);
+			path = "json file";
 			sourceTree = "<group>";
 		};
 		956E374246D2423F9936EB0C /* Frameworks */ = {
@@ -358,6 +372,8 @@
 				7D85030824F3D12F0021BBEB /* Assets.xcassets in Resources */,
 				7D85033E24F3D3CB0021BBEB /* Roboto-Bold.ttf in Resources */,
 				7D85033D24F3D3CB0021BBEB /* Roboto-Regular.ttf in Resources */,
+				7DEB559F24F69589003E85AC /* ResponseWithProductListEmpty.json in Resources */,
+				7DEB559B24F69129003E85AC /* ResponseWithProductList.json in Resources */,
 				7D85033F24F3D3CB0021BBEB /* Roboto-Black.ttf in Resources */,
 				7D85033C24F3D3CB0021BBEB /* Roboto-Light.ttf in Resources */,
 				7D85033B24F3D3CB0021BBEB /* Roboto-Medium.ttf in Resources */,
@@ -452,7 +468,7 @@
 				7D85034324F3D3CB0021BBEB /* IndicatorView.swift in Sources */,
 				7D85034724F3D3CB0021BBEB /* ProductAPIError.swift in Sources */,
 				7D85034524F3D3CB0021BBEB /* Extensions.swift in Sources */,
-				7D85034824F3D3CB0021BBEB /* ProductConstant.swift in Sources */,
+				7DEB559924F67BE0003E85AC /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
